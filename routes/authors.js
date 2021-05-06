@@ -27,12 +27,12 @@ router.get("/new", (req, res) => {
 // Create Authors Route
 router.post("/", async (req, res) => {
   const author = new Author({
-    name: req.body.name,
+    name: req.body.name
   });
   try {
     const newAuthor = await author.save();
     //! res.redirect(`author/${newAuthor.id}`)
-    res.redirect(`authors`)
+    res.redirect('authors')
   } catch {
     res.render("authors/new", {
       author: author,
